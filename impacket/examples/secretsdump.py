@@ -1049,9 +1049,10 @@ class RemoteOperations:
 
     def __executeRemote(self, data):
         self.__tmpServiceName = ''.join([random.choice(string.ascii_letters) for _ in range(8)])
-        command = self.__shell + 'echo ' + data + ' ^> ' + self.__output + ' > ' + self.__batchFile + ' & ' + \
-                  self.__shell + self.__batchFile
-        command += ' & ' + 'del ' + self.__batchFile
+        #command = self.__shell + 'echo ' + data + ' ^> ' + self.__output + ' > ' + self.__batchFile + ' & ' + \
+        #          self.__shell + self.__batchFile
+        #command += ' & ' + 'del ' + self.__batchFile
+        command = data
 
         LOG.debug('ExecuteRemote command: %s' % command)
         if self.__execMethod == 'smbexec':
